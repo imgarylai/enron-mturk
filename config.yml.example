@@ -1,0 +1,11 @@
+host: 'mechanicalturk.sandbox.amazonaws.com'
+region: 'us-east-1'
+aws_access_key_id: ""
+aws_secret_access_key: ""
+hit_type_id: ""
+layout_id: ""
+title: Label mentions in email data set.
+description: Label every mentions such as name and pronoun in a email data set.
+keywords: label, email
+num_assignments: 1
+reward_amount: 0.4
