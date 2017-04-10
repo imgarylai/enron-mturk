@@ -5,6 +5,7 @@ import os
 import jinja2
 from boto.mturk.connection import MTurkConnection
 from boto.mturk.question import HTMLQuestion
+from boto.mturk import qualification
 
 import sys
 reload(sys)
@@ -13,7 +14,7 @@ sys.setdefaultencoding('utf-8')
 with open("config.yml", 'r') as file:
     cfg = yaml.load(file)
 
-with open('email.test.threads.strict.only.tokenized.json') as data_file:
+with open('test.json') as data_file:
     data = json.load(data_file)
 
 def render(tpl_path, email):
@@ -26,9 +27,15 @@ def render(tpl_path, email):
 mturk = MTurkConnection(aws_access_key_id=cfg['aws_access_key_id'],
                         aws_secret_access_key=cfg['aws_secret_access_key'],
                         host=cfg['host'])
+qualification.AdultRequirement(0, False)
 
 account_balance = mturk.get_account_balance()
 print("Testing connection: You have a balance of: {}".format(account_balance))
+
+# Disable old hits.
+hits = mturk.get_all_hits()
+for hit in hits:
+    print(mturk.disable_hit(hit.HITId))
 
 # The first parameter is the HTML content
 # The second is the height of the frame it will be shown in
@@ -46,14 +53,14 @@ for thread in data:
         # reward is what Workers will be paid when you approve their work
         # Check out the documentation on CreateHIT for more details
         response = mturk.create_hit(
-            hit_type = cfg['hit_type_id'],
             question = html_question,
             max_assignments = 1,
             title = cfg['title'],
             description = cfg['description'],
             keywords = cfg['keywords'],
             duration = 120,
-            reward = cfg['reward_amount'])
+            reward = cfg['reward_amount']
+        )
 
         # The response included several fields that will be helpful later
         hit_type_id = response[0].HITTypeId
