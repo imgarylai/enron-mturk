@@ -1,53 +1,748 @@
 <html>
-    <head>
-        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
-        <script src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js' type='text/javascript'></script>
-    </head>
-    <body>
-        <!-- Bootstrap v3.0.3 -->
-        <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
-        <section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
-            <div class="row col-xs-12 col-md-12">
-                <!-- Instructions -->
-                <div class="panel panel-primary">
-                    <div class="panel-heading"><strong>Instructions</strong></div>
-
-                    <div class="panel-body">
-                        <p>Find and report when a restaurant&#39;s happy hours are</p>
-
-                        <ul><!-- We are adding a template variable below which we will replace with an actual link in our code later -->
-                            <li>List</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- End Instructions -->
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+  <script src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js' type='text/javascript'></script>
+</head>
+<body>
+  <!-- Bootstrap v3.0.3 -->
+  <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+  <section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+    <div class="row col-xs-12 col-md-12">
+      <!-- Instructions -->
+      <div class="panel panel-primary">
+        <div class="panel-heading"><strong>Instructions</strong></div>
+        <div class="panel-body">
+          <p>Find and label the sender and receiver of the email. Here are some examples of labeling sender and receiver:</p>
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12">
+                <strong>sender:</strong> phillip.allen@enron.com
+              </div>
+              <div class="col-xs-12">
+                <strong>receiver:</strong> ina.rangel@enron.com
+              </div>
             </div>
-        </section>
-        <section class="container">
-            <div class="row col-xs-12 col-md-12">
-                <!-- HTML to handle creating the HIT form -->
-                <form name='mturk_form' method='post' id='mturk_form' action='https://workersandbox.mturk.com/mturk/externalSubmit'>
-                    <input type='hidden' value='' name='assignmentId' id='assignmentId'/>
-                    <fieldset>
-                        <label>Please label each mention in this email:</label>
-                        <p>
-                            {{ email['tokenized_body'] }}
-                        </p>
-                        <div class="checkbox">
-                            {% for token in email['token'] %}
-                            <label>
-                                <input name="mention" type="checkbox" value="{{ loop.index0 }}" />{{ token }}
-                            </label><br/>
-                            {% endfor %}
-                        </div>
-                    </fieldset>
-                    <p><input type='submit' id='submitButton' value='Submit' /></p>
-                </form>
-                <script language='Javascript'>turkSetAssignmentID();</script>
+            <div class="row">
+              <div class="col-xs-12 ">
+                <table class="table-bordered">
+                  <tbody>
+                    <tr>
+                      <td>
+                        Ina
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2" selected>Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        ,
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        Can
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        you
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        please
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        forward
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        the
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        presentation
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        to
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        Mog
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        .
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        Phillip
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1" selected>Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-        </section>
-        <!-- close container -->
-        <style type="text/css">fieldset { padding: 10px; background:#fbfbfb; border-radius:5px; margin-bottom:5px; }
-        </style>
-    </body>
+            <div class="row">
+              <div class="col-xs-12">
+                <strong>sender:</strong> Allen, Phillip K.
+              </div>
+              <div class="col-xs-12">
+                <strong>receiver:</strong> Oxley, David
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <table class="table-bordered">
+                  <tbody>
+                    <tr>
+                      <td>
+                        David
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2" selected>Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        ,
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        This
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        note
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        is
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        to
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        give
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        you
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        my
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        feedback
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        on
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        Jeanie
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        Slone
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        .
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        She
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        has
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        been
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        extremely
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        helpful
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        with
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        all
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        personnel
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        issues
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        during
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        the
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        last
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        six
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        months
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        .
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        Without
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        exception
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        she
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        has
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        satisfied
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        any
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        request
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        I
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        have
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        made
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        of
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        her
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        .
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        She
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        has
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        done
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        an
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        excellent
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        job
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        dealing
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        with
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        performance
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        reviews
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        (
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        both
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        good
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        and
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        bad
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        )
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        ,
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        salary
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        ,
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        and
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        title
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        issues
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        .
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1">Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                      <td>
+                        Phillip
+                        <select class="form-control input-xs">
+                          <option value="0">N/A</option>
+                          <option value="1" selected>Sender</option>
+                          <option value="2">Receiver</option>
+                        </select>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Instructions -->
+    </div>
+  </section>
+  <section class="container">
+    <div class="row col-xs-12 col-md-12">
+      <!-- HTML to handle creating the HIT form -->
+      <form name='mturk_form' method='post' id='mturk_form' action='https://workersandbox.mturk.com/mturk/externalSubmit'>
+        <input type='hidden' value='' name='assignmentId' id='assignmentId' />
+        <fieldset>
+          <label>Please label each mention in this email:</label>
+          <p>
+            {{ email['tokenized_body'] }}
+          </p>
+          <table class="table-bordered">
+            <tbody>
+              <tr>
+              {% for token in email['token'] %}
+                <td>
+                  {{ token }}
+                  <select name="{{ loop.index0 }}" class="form-control input-xs">
+                    <option value="0">N/A</option>
+                    <option value="1">Sender</option>
+                    <option value="2">Receiver</option>
+                  </select>
+                </td>
+                {% if loop.index is divisibleby 15 %}
+                  </tr>
+                  <tr>
+                {% endif %}
+              {% endfor %}
+              </tr>
+            </tbody>
+          </table>
+        </fieldset>
+        <p><input type='submit' id='submitButton' value='Submit' /></p>
+      </form>
+      <script language='Javascript'>
+        turkSetAssignmentID();
+      </script>
+    </div>
+  </section>
+  <!-- close container -->
+  <style type="text/css">
+    fieldset {
+      padding: 10px;
+      background: #fbfbfb;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+    .input-xs {
+      height: 22px;
+      padding: 2px 5px;
+      font-size: 12px;
+      line-height: 1.5; /* If Placeholder of the input is moved up, rem/modify this. */
+      border-radius: 3px;
+    }
+  </style>
+</body>
+
 </html>
