@@ -1,5 +1,4 @@
 import yaml
-import boto
 import json
 import os
 import jinja2
