@@ -6,479 +6,438 @@
 <body>
   <!-- Bootstrap v3.0.3 -->
   <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
-  <section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
-    <div class="row col-xs-12 col-md-12">
-      <!-- Instructions -->
-      <div class="panel panel-primary">
-        <div class="panel-heading"><strong>Instructions</strong></div>
-        <div class="panel-body">
-          <p>Find and label the sender and receiver of the email. Here are some examples of labeling sender and receiver:</p>
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12">
-                <strong>sender:</strong> phillip.allen@enron.com
-              </div>
-              <div class="col-xs-12">
-                <strong>receiver:(multiple receivers are separated by semicolon(;))</strong> ina.rangel@enron.com
-              </div>
-              <div class="col-xs-12">
-                <strong>content:</strong> Ina, Can you please forward the presentation to Mog . Phillip
-              </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <!-- Instructions -->
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <strong>Instructions</strong>
+          </div>
+          <div class="panel-body">
+            <div class="col-xs-12">
+              <p>
+                Find and label the sender and receiver of the email.
+                <li>Label both first name and last name as sender or receiver(s).</li>
+                <li>Label pronoun (I, me, he, she, herself, you, it, that, they, each, few, many, who, whoever, whose, someone, everybody, etc.) and common nouns(guys, man, mom, sister, bother, etc.) as much as you can.</li>
+              </p>
             </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <table class="table-bordered">
-                  <tbody>
-                    <tr>
-                      <td style="background-color:red">
-                        <p style="color: white">
-                          Ina
-                        </p>
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2" selected>Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        ,
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        Can
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        you
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        please
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        forward
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        the
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        presentation
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        to
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        Mog
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        .
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td style="background-color:red">
-                        <p style="color: white">
-                          Phillip
-                        </p>
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1" selected>Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+            <div class="col-xs-12">
+              Here are some examples of labeling sender and receiver:
+            </div>
+            <div class="col-xs-12">
+              <h4>Example 1</h4>
+              <p><strong>sender:</strong> phillip.allen@enron.com</p>
+              <p><strong>receiver:(multiple receivers are separated by semicolon(;))</strong> ina.rangel@enron.com</p>
+              <p><strong>content:</strong> Ina, Can you please forward the presentation to Mog . Phillip</p>
+              <div class="pull-left label-box mention">
+                Ina
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2" selected>Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                ,
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                Can
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box mention">
+                you
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2" selected>Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                please
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                forward
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                the
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                presentation
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                to
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                Mog
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                .
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box mention">
+                Phillip
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1" selected>Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
               </div>
             </div>
             <hr>
-            <div class="row">
-              <div class="col-xs-12">
-                <strong>sender:</strong> Engler, Adrianne
+            <div class="col-xs-12">
+              <h4>Example 2</h4>
+              <p><strong>sender:</strong> Engler, Adrianne</p>
+              <p><strong>receiver:(multiple receivers are separated by semicolon(;))</strong> Allen, Phillip K.; Grigsby, Mike</p>
+              <p><strong>content:</strong> Hi Phillip and Mike ! Is there any way you could contact the below candidate for the ENA TRading Track ? I appreciate your extra effort ! Kind regards , Adrianne x57302</p>
+              <div class="pull-left label-box">
+                Hi
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
               </div>
-              <div class="col-xs-12">
-                <strong>receiver:(multiple receivers are separated by semicolon(;))</strong> Allen, Phillip K.; Grigsby, Mike
+              <div class="pull-left label-box mention">
+                Phillip
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2" selected>Receiver</option>
+                </select>
               </div>
-              <div class="col-xs-12">
-                <strong>content:</strong> Hi Phillip and Mike ! Is there any way you could contact the below candidate for the ENA TRading Track ? I appreciate your extra effort ! Kind regards , Adrianne x57302
+              <div class="pull-left label-box">
+                and
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-xs-12">
-                <table class="table-bordered">
-                  <tbody>
-                    <tr>
-                      <td>
-                        Hi
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td style="background-color:red">
-                        <p style="color: white">
-                          Phillip
-                        </p>
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2" selected>Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        and
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td style="background-color:red">
-                        <p style="color: white">
-                          Mike
-                        </p>
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2" selected>Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        !
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        Is
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        there
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        any
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        way
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td style="background-color:red">
-                        <p style="color: white">
-                          you
-                        </p>
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2" selected>Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        could
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        contact
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        the
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        below
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        candidate
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        for
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        the
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        ENA
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        TRading
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        Track
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        ?
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td style="background-color:red">
-                        <p style="color: white">
-                          I
-                        </p>
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1" selected>Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        appreciate
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td style="background-color:red">
-                        <p style="color: white">
-                          your
-                        </p>
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2" selected>Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        extra
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        effort
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        !
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        Kind
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        regards
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        ,
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="background-color:red">
-                        <p style="color: white">
-                          Adrianne
-                        </p>
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1" selected>Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                      <td>
-                        x5730
-                        <select class="form-control input-xs">
-                          <option value="0">N/A</option>
-                          <option value="1">Sender</option>
-                          <option value="2">Receiver</option>
-                        </select>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+              <div class="pull-left label-box mention">
+                Mike
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2" selected>Receiver</option>
+                </select>
               </div>
-            </div>
-            <div class="row">
-              <li>If you see both first name and last name in the email content, please label both as a sender or receiver</li>
-              <li>Please label pronoun as better as you can. ex: (I, me, he, she, herself, you, it, that, they, each, few, many, who, whoever, whose, someone, everybody, etc.)</li>
+              <div class="pull-left label-box">
+                !
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                Is
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                there
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                any
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                way
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box mention">
+                you
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2" selected>Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                could
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                contact
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                the
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                below
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                candidate
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                for
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                the
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                ENA
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                TRading
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                Track
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                ?
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box mention">
+                I
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1" selected>Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                appreciate
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box mention">
+                your
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2" selected>Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                extra
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                effort
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                !
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                Kind
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                regards
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                ,
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box mention">
+                Adrianne
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1" selected>Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box mention">
+                Engler
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1" selected>Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
+              <div class="pull-left label-box">
+                x5730
+                <select class="form-control input-xs">
+                  <option value="0">N/A</option>
+                  <option value="1">Sender</option>
+                  <option value="2">Receiver</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- End Instructions -->
     </div>
-  </section>
-  <section class="container">
-    <div class="row col-xs-12 col-md-12">
-      <!-- HTML to handle creating the HIT form -->
-      <form name='mturk_form' method='post' id='mturk_form' action='https://workersandbox.mturk.com/mturk/externalSubmit'>
-        <input type='hidden' value='' name='assignmentId' id='assignmentId' />
-        <fieldset>
-          <label>Please label each mention in this email:</label>
-          <p><strong>sender:</strong> {{ email['From'] }}</p>
-          <p><strong>receivers:(multiple receivers are separated by semicolon(;))</strong> {{ email['receivers'] }}</p>
-          <p>
-            {{ email['tokenized_body'] }}
-          </p>
-          <table class="table-bordered table-striped">
-            <tbody>
-              <tr>
+  </div>
+  <!-- End Instructions -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <form name='mturk_form' method='post' id='mturk_form' action='https://workersandbox.mturk.com/mturk/externalSubmit'>
+          <input type='hidden' value='' name='assignmentId' id='assignmentId' />
+          <fieldset>
+            <label>Please label each mention in this email:</label>
+            <p><strong>sender:</strong> {{ email['From'] }}</p>
+            <p><strong>receivers:(multiple receivers are separated by semicolon(;))</strong> {{ email['receivers'] }}</p>
+            <p>
+              {{ email['tokenized_body'] }}
+            </p>
+            <div class="col-xs-12">
               {% for token in email['token'] %}
-                <td>
-                  <p style="font-weight:bold;color:blue">{{ token }}</p>
+                <p class="pull-left label-box select-box">
+                  {{ token }}
                   <select name="{{ loop.index0 }}" class="form-control input-xs">
                     <option value="0">N/A</option>
                     <option value="1">Sender</option>
                     <option value="2">Receiver</option>
                   </select>
-                </td>
-                {% if loop.index is divisibleby 15 %}
-                  </tr>
-                  <tr>
-                {% endif %}
+                </p>
               {% endfor %}
-              </tr>
-            </tbody>
-          </table>
-        </fieldset>
-        <p><input type='submit' id='submitButton' value='Submit' /></p>
-      </form>
-      <script language='Javascript'>
-        turkSetAssignmentID();
-      </script>
+            </div>
+          </fieldset>
+          <p><input type='submit' id='submitButton' value='Submit' class="col-xs-6 btn btn-default btn-primary" /></p>
+        </form>
+        <script language='Javascript'>
+          turkSetAssignmentID();
+        </script>
+      </div>
+      <!-- HTML to handle creating the HIT form -->
     </div>
-  </section>
+  </div>
   <!-- close container -->
   <style type="text/css">
     fieldset {
@@ -493,6 +452,18 @@
       font-size: 12px;
       line-height: 1.5; /* If Placeholder of the input is moved up, rem/modify this. */
       border-radius: 3px;
+    }
+    .label-box {
+      text-align: center;
+      padding: 1px;
+      border: 1px solid #ddd;
+    }
+    .mention {
+      background-color: #5bc0de;
+      color: white;
+    }
+    .select-box {
+      color: navy;
     }
   </style>
 </body>
