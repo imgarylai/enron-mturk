@@ -20,9 +20,12 @@ class Mturk():
         account_balance = self.mturk.get_account_balance()
         print("Testing connection: You have a balance of: {}".format(account_balance))
 
+    def get_hits(self):
+        return self.mturk.get_all_hits()
+
     def remove_old_hits(self):
         # Disable old hits.
-        for hit in self.mturk.get_all_hits():
+        for hit in self.get_all_hits():
             print("Hit {} has been removed.".format(hit.HITId))
             self.mturk.disable_hit(hit.HITId)
 
