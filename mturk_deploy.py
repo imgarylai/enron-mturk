@@ -1,7 +1,6 @@
 from mturk import Mturk
 import ujson as json
 import pandas as pd
-# from tqdm import tqdm
 
 source = 'tsv/'
 enron_json = 'email.threads.strict.only.ner.json'
@@ -35,4 +34,4 @@ if __name__ == '__main__':
                                     columns=['path', 'hit_id'])
             df = df.append(mturk_df, ignore_index=True)
 
-        df.to_csv('hit.csv')
+            df.to_csv('hit.csv')

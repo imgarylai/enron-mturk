@@ -40,6 +40,12 @@ class Mturk():
             print("Hit {} has been removed.".format(hit.HITId))
             self.mturk.disable_hit(hit.HITId)
 
+    def cal_reward(self, data):
+        read_instruction = 3.0
+        word_count = len(data['ents']) * 1/30.0
+        return round((read_instruction + word_count) / 60.0 * 6.0, 2)
+
+
     def create_hit(self, data):
         # These parameters define the HIT that will be created
         # question is what we defined above
@@ -50,12 +56,12 @@ class Mturk():
         # Check out the documentation on CreateHIT for more details
         response = self.mturk.create_hit(
             question = self.mturk_tmpl.html_question(data),
-            max_assignments=1,
+            max_assignments = 2,
             title = self.config['title'],
             description = self.config['description'],
             keywords = self.config['keywords'],
             duration = 120,
-            reward = self.config['reward_amount']
+            reward = self.cal_reward(data)
         )
         return response
 

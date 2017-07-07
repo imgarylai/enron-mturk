@@ -416,8 +416,12 @@
           <fieldset>
             <label>Please label each mention in this email:</label>
             <p><strong>sender:</strong> {{ email['From'] }}</p>
-            <p><strong>receivers:(multiple receivers are separated by semicolon ; )</strong> {{
-              email['receivers'] }}</p>
+            <p>
+              <strong>receivers:(multiple receivers are separated by semicolon ; )</strong>
+              {% for receiver in email['receivers'] %}
+                {{ receiver }};
+              {% endfor %}
+            </p>
             <p>
               {{ email['body'] }}
             </p>
