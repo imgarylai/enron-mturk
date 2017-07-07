@@ -1,11 +1,10 @@
-import elit
 from mturk import Mturk
 import ujson as json
 import pandas as pd
+# from tqdm import tqdm
 
-reader = elit.TSVReader(1, 2, 3, 4, 5, 6, 7, 8)
 source = 'tsv/'
-enron_json = 'email.threads.strict.only.json'
+enron_json = 'email.threads.strict.only.ner.json'
 
 with open(enron_json) as data_file:
     data = json.load(data_file)
@@ -23,6 +22,7 @@ if __name__ == '__main__':
             try:
                 response = mturk.create_hit(email)
             except Exception as e:
+                print(e.message)
                 continue
 
             # The response included several fields that will be helpful later
@@ -35,4 +35,4 @@ if __name__ == '__main__':
                                     columns=['path', 'hit_id'])
             df = df.append(mturk_df, ignore_index=True)
 
-    df.to_csv('hit.csv')
+        df.to_csv('hit.csv')

@@ -422,11 +422,24 @@
               {{ email['body'] }}
             </p>
             <div class="col-xs-12">
+              {% set counter = [] %}
+              {% set ent_list = []%}
               {% for ent in email['ents'] %}
                 <p class="pull-left label-box select-box">
-                  {{ ent[0] }}
+                  {% if ent[1] == True or ent[2] == 'PERSON' or ent[2] == 'ORG' %}
+                    {% if counter.append('1') %}{% endif %}
+                    {% set l = counter|length|string %}
+                    {% set name = ent[0] + "_" + l %}
+                    {{ name }}
+                    {% if ent_list.append(name) %}{% endif %}
+                  {% else %}
+                    {{ ent[0] }}
+                  {% endif %}
                   <select name="{{ loop.index0 }}" class="form-control input-xs">
                     <option value="0" selected>N/A</option>
+                    {% for e in ent_list[0:-1] %}
+                      <option value="a">{{ e }}</option>
+                    {% endfor %}
                     <optgroup label="Sender">
                       <option value="1">{{ email['From'] }}</option>
                     </optgroup>
