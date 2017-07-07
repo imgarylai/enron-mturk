@@ -1,12 +1,11 @@
 import pandas as pd
-import math
 
-filename="ner/maildir/arnold-j/deleted_items/176./2.tsv"
-df = pd.read_csv(filename, sep = '\t', header=None, usecols=[2, 8], quotechar='"')
+filename="tsv/maildir/arnold-j/deleted_items/176./2.tsv"
+df = pd.read_csv(filename, sep = '\t', header=None, usecols=[1, 8], quotechar='"')
 
 tags = []
 for i in df.iterrows():
-    tags.append((i[1][2], i[1][8]))
+    tags.append((i[1][1], i[1][8]))
 
 def group(tags):
     start = None
@@ -37,8 +36,7 @@ def group(tags):
             start = None
         else:
             continue
-        print(tag[0])
-        print(result)
     return result
 
-print(group(tags))
+if __name__ == '__main__':
+    print(group(tags))

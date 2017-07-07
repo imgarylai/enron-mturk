@@ -422,18 +422,18 @@
               {{ email['body'] }}
             </p>
             <div class="col-xs-12">
-              {% for token in email['ents'] %}
+              {% for ent in email['ents'] %}
                 <p class="pull-left label-box select-box">
-                  {{ token[0] }}
+                  {{ ent[0] }}
                   <select name="{{ loop.index0 }}" class="form-control input-xs">
                     <option value="0" selected>N/A</option>
                     <optgroup label="Sender">
                       <option value="1">{{ email['From'] }}</option>
                     </optgroup>
                     <optgroup label="Receiver">
-                      <!--{% for receiver in email['receivers'] %}-->
-                        <option value="2">{{email['receivers']}}</option>
-                      <!--{% endfor %}-->
+                      {% for receiver in email['receivers'] %}
+                        <option value="2">{{ receiver }}</option>
+                      {% endfor %}
                     </optgroup>
                   </select>
                 </p>

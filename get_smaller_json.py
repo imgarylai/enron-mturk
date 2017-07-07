@@ -9,7 +9,7 @@ with open(data_path) as data_file:
 result = []
 
 for i, d in enumerate(data):
-    if i > 100:
+    if i > 1000:
         break
     else:
         result.append(d)

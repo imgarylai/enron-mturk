@@ -1,12 +1,9 @@
-import ujson as json
 import elit
-from tqdm import tqdm
 
-data_path = 'email.threads.strict.only.json'
-outout_path = 'email.threads.strict.only.ner.json'
+filename = "tsv/maildir/arnold-j/deleted_items/176./2.tsv"
+reader = elit.TSVReader(1, 2, 3, 4, 5, 6, 7, 8)
+reader.open(filename)
 
-with open(data_path) as data_file:
-    data = json.load(data_file)
 
 def group(graphs):
     start = None
@@ -39,21 +36,10 @@ def group(graphs):
             continue
     return result
 
+
 if __name__ == '__main__':
-    reader = elit.TSVReader(1, 2, 3, 4, 5, 6, 7, 8)
+    arr = []
+    for nodes in reader.next_all:
+        arr.extend(group(nodes))
 
-    for thread in tqdm(data):
-        for i, email in enumerate(thread['emails']):
-            filename = "tsv/{}/{}.tsv".format(thread['path'], i)
-
-            try:
-                reader.open(filename)
-                arr = []
-                for nodes in reader.next_all:
-                    arr.extend(group(nodes))
-                email['ents'] = arr
-            except TypeError:
-                email['ents'] = []
-
-        with open(outout_path, 'w') as outfile:
-            json.dump(data, outfile, indent = 2)
+    print(arr)
