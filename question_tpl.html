@@ -419,16 +419,22 @@
             <p><strong>receivers:(multiple receivers are separated by semicolon ; )</strong> {{
               email['receivers'] }}</p>
             <p>
-              {{ email['tokenized_body'] }}
+              {{ email['body'] }}
             </p>
             <div class="col-xs-12">
-              {% for token in email['token'] %}
+              {% for token in email['ents'] %}
                 <p class="pull-left label-box select-box">
-                  {{ token }}
+                  {{ token[0] }}
                   <select name="{{ loop.index0 }}" class="form-control input-xs">
-                    <option value="0">N/A</option>
-                    <option value="1">Sender</option>
-                    <option value="2">Receiver</option>
+                    <option value="0" selected>N/A</option>
+                    <optgroup label="Sender">
+                      <option value="1">{{ email['From'] }}</option>
+                    </optgroup>
+                    <optgroup label="Receiver">
+                      <!--{% for receiver in email['receivers'] %}-->
+                        <option value="2">{{email['receivers']}}</option>
+                      <!--{% endfor %}-->
+                    </optgroup>
                   </select>
                 </p>
               {% endfor %}

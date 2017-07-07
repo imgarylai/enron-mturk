@@ -2,7 +2,7 @@ import json
 from mturk import Mturk
 import pandas as pd
 
-data_path = 'test.json'
+data_path = 'test2.json'
 
 with open(data_path) as data_file:
     data = json.load(data_file)
@@ -16,10 +16,11 @@ df = pd.DataFrame(columns=['path', 'hit_id'])
 
 for thread in data:
     for email in thread['emails']:
-        try:
-            response = mturk.create_hit(email)
-        except Exception as e:
-            continue
+        # try:
+        response = mturk.create_hit(email)
+        # except Exception as e:
+        #     print(e.message)
+        #     continue
 
         # The response included several fields that will be helpful later
         hit_type_id = response[0].HITTypeId

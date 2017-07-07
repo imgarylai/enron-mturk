@@ -34,8 +34,8 @@ class MturkTmpl():
                 continue
         if len(receivers) > 15:
             raise ReceiversTooMuch
-        if len(data['token']) > 250 or len(data['token']) < 10:
-            raise TokenLength
+        # if len(data['token']) > 250 or len(data['token']) < 10:
+        #     raise TokenLength
         receivers = '/'.join(receivers)
         data['receivers'] = cgi.escape(receivers)
         question_html_value = self.render('question_tpl.html', data)
@@ -43,5 +43,5 @@ class MturkTmpl():
         # The first parameter is the HTML content
         # The second is the height of the frame it will be shown in
         # Check out the documentation on HTMLQuestion for more details
-
         return HTMLQuestion(question_html_value, 500)
+

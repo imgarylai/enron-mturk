@@ -3,7 +3,6 @@ import yaml
 from boto.mturk.connection import MTurkConnection, MTurkRequestError
 from mturk_tmpl import MturkTmpl, ReceiversTooMuch, TokenLength
 
-
 class Mturk():
     def __init__(self):
         self.config = self.set_config()
@@ -37,7 +36,7 @@ class Mturk():
 
     def remove_old_hits(self):
         # Disable old hits.
-        for hit in self.get_all_hits():
+        for hit in self.get_hits():
             print("Hit {} has been removed.".format(hit.HITId))
             self.mturk.disable_hit(hit.HITId)
 
@@ -59,8 +58,6 @@ class Mturk():
             reward = self.config['reward_amount']
         )
         return response
-
-
 
 if __name__ == '__main__':
     m = Mturk()
