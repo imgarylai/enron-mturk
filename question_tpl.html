@@ -33,102 +33,79 @@
               <p><strong>receiver:(multiple receivers are separated by semicolon ; )</strong>
                 ina.rangel@enron.com</p>
               <p><strong>content:</strong> Ina, Can you please forward the presentation to Mog . Phillip</p>
-              <div class="pull-left label-box mention">
-                Ina
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2" selected>Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                ,
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                Can
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box mention">
-                you
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2" selected>Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                please
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                forward
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                the
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                presentation
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                to
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                Mog
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                .
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box mention">
-                Phillip
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1" selected>Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
+              <p><mark data-entity="org">Ina <sub>1</sub></mark>, Can <mark data-entity="org">you <sub>2</sub></mark> please forward the presentation to <mark data-entity="org">Mog <sub>3</sub></mark>. <mark data-entity="org">Phillip <sub>4</sub></mark></p>
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-xs-1">Ina</label>
+                  <div class="col-xs-11">
+                    <select class="form-control input-xs">
+                      <option value="0">N/A</option>
+                      <optgroup label="Sender">
+                        <option value="s1">phillip.allen@enron.com</option>
+                      </optgroup>
+                      <optgroup label="Receiver">
+                        <option value="r1" selected>ina.rangel@enron.com</option>
+                      </optgroup>
+                      <optgroup label="Mention">
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-1">you</label>
+                  <div class="col-xs-11">
+                    <select class="form-control input-xs">
+                      <option value="0">N/A</option>
+                      <optgroup label="Sender">
+                        <option value="s1">phillip.allen@enron.com</option>
+                      </optgroup>
+                      <optgroup label="Receiver">
+                        <option value="r1">ina.rangel@enron.com</option>
+                      </optgroup>
+                      <optgroup label="Mention">
+                        <option value="m1" selected>Ina <sub>1</sub></option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-1">Mog</label>
+                  <div class="col-xs-11">
+                    <select class="form-control input-xs">
+                      <option value="0">N/A</option>
+                      <optgroup label="Sender">
+                        <option value="s1">phillip.allen@enron.com</option>
+                      </optgroup>
+                      <optgroup label="Receiver">
+                        <option value="r1">ina.rangel@enron.com</option>
+                      </optgroup>
+                      <optgroup label="Mention">
+                        <option value="m1">Ina <sub>1</sub></option>
+                        <option value="m2">you <sub>2</sub></option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-1">Phillip</label>
+                  <div class="col-xs-11">
+                    <select class="form-control input-xs">
+                      <option value="0">N/A</option>
+                      <optgroup label="Sender">
+                        <option value="s1" selected>phillip.allen@enron.com</option>
+                      </optgroup>
+                      <optgroup label="Receiver">
+                        <option value="r1">ina.rangel@enron.com</option>
+                      </optgroup>
+                      <optgroup label="Mention">
+                        <option value="m1">Ina <sub>1</sub></option>
+                        <option value="m2">you <sub>2</sub></option>
+                        <option value="m3">Ina <sub>3</sub></option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+              </form>
             </div>
             <hr>
             <div class="col-xs-12">
@@ -137,270 +114,156 @@
               <p><strong>receiver:(multiple receivers are separated by semicolon ; )</strong>
                 Allen, Phillip K.; Grigsby, Mike</p>
               <p><strong>content:</strong> Hi Phillip and Mike ! Is there any way you could contact the below candidate for the ENA TRading Track ? I appreciate your extra effort ! Kind regards , Adrianne x57302</p>
-              <div class="pull-left label-box">
-                Hi
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box mention">
-                Phillip
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2" selected>Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                and
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box mention">
-                Mike
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2" selected>Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                !
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                Is
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                there
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                any
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                way
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box mention">
-                you
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2" selected>Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                could
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                contact
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                the
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                below
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                candidate
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                for
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                the
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                ENA
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                TRading
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                Track
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                ?
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box mention">
-                I
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1" selected>Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                appreciate
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box mention">
-                your
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2" selected>Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                extra
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                effort
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                !
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                Kind
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                regards
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                ,
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box mention">
-                Adrianne
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1" selected>Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box mention">
-                Engler
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1" selected>Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
-              <div class="pull-left label-box">
-                x5730
-                <select class="form-control input-xs">
-                  <option value="0">N/A</option>
-                  <option value="1">Sender</option>
-                  <option value="2">Receiver</option>
-                </select>
-              </div>
+              <p>Hi <mark data-entity="org">Phillip <sub>1</sub></mark> and <mark data-entity="org">Mike <sub>2</sub></mark> ! Is there any way <mark data-entity="org">you <sub>3</sub></mark> could contact the below candidate for the <mark data-entity="org">ENA TRading Track <sub>4</sub></mark> ? <mark data-entity="org">I <sub>5</sub></mark> appreciate <mark data-entity="org">your <sub>6</sub></mark> extra effort ! Kind regards , <mark data-entity="org">Adrianne <sub>7</sub></mark> x57302</p>
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-xs-1">Phillip</label>
+                  <div class="col-xs-11">
+                    <select class="form-control input-xs">
+                      <option value="0">N/A</option>
+                      <optgroup label="Sender">
+                        <option value="s1">Engler, Adrianne</option>
+                      </optgroup>
+                      <optgroup label="Receiver">
+                        <option value="r0">All</option>
+                        <option value="r1" selected>Allen, Phillip K.</option>
+                        <option value="r2">Grigsby, Mike</option>
+                      </optgroup>
+                      <optgroup label="Mention">
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-1">Mike</label>
+                  <div class="col-xs-11">
+                    <select class="form-control input-xs">
+                      <option value="0">N/A</option>
+                      <optgroup label="Sender">
+                        <option value="s1">Engler, Adrianne</option>
+                      </optgroup>
+                      <optgroup label="Receiver">
+                        <option value="r0">All</option>
+                        <option value="r1">Allen, Phillip K.</option>
+                        <option value="r2" selected>Grigsby, Mike</option>
+                      </optgroup>
+                      <optgroup label="Mention">
+                        <option value="m1">Phillip <sub>1</sub></option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-1">you</label>
+                  <div class="col-xs-11">
+                    <select class="form-control input-xs">
+                      <option value="0">N/A</option>
+                      <optgroup label="Sender">
+                        <option value="s1">Engler, Adrianne</option>
+                      </optgroup>
+                      <optgroup label="Receiver">
+                        <option value="r0" selected>All</option>
+                        <option value="r1">Allen, Phillip K.</option>
+                        <option value="r2">Grigsby, Mike</option>
+                      </optgroup>
+                      <optgroup label="Mention">
+                        <option value="m1">Phillip <sub>1</sub></option>
+                        <option value="m2">Mike <sub>2</sub></option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-1">ENA TRading Track</label>
+                  <div class="col-xs-11">
+                    <select class="form-control input-xs">
+                      <option value="0" selected>N/A</option>
+                      <optgroup label="Sender">
+                        <option value="s1">Engler, Adrianne</option>
+                      </optgroup>
+                      <optgroup label="Receiver">
+                        <option value="r0">All</option>
+                        <option value="r1">Allen, Phillip K.</option>
+                        <option value="r2">Grigsby, Mike</option>
+                      </optgroup>
+                      <optgroup label="Mention">
+                        <option value="m1">Phillip <sub>1</sub></option>
+                        <option value="m2">Mike <sub>2</sub></option>
+                        <option value="m3">you <sub>3</sub></option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-1">I</label>
+                  <div class="col-xs-11">
+                    <select class="form-control input-xs">
+                      <option value="0" selected>N/A</option>
+                      <optgroup label="Sender">
+                        <option value="s1" selected>Engler, Adrianne</option>
+                      </optgroup>
+                      <optgroup label="Receiver">
+                        <option value="r0">All</option>
+                        <option value="r1">Allen, Phillip K.</option>
+                        <option value="r2">Grigsby, Mike</option>
+                      </optgroup>
+                      <optgroup label="Mention">
+                        <option value="m1">Phillip <sub>1</sub></option>
+                        <option value="m2">Mike <sub>2</sub></option>
+                        <option value="m3">you <sub>3</sub></option>
+                        <option value="m4">ENA TRading Track <sub>4</sub></option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-1">your</label>
+                  <div class="col-xs-11">
+                    <select class="form-control input-xs">
+                      <option value="0">N/A</option>
+                      <optgroup label="Sender">
+                        <option value="s1">Engler, Adrianne</option>
+                      </optgroup>
+                      <optgroup label="Receiver">
+                        <option value="r0" selected>All</option>
+                        <option value="r1">Allen, Phillip K.</option>
+                        <option value="r2">Grigsby, Mike</option>
+                      </optgroup>
+                      <optgroup label="Mention">
+                        <option value="m1">Phillip <sub>1</sub></option>
+                        <option value="m2">Mike <sub>2</sub></option>
+                        <option value="m3">you <sub>3</sub></option>
+                        <option value="m4">ENA TRading Track <sub>4</sub></option>
+                        <option value="m5">I <sub>5</sub></option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-xs-1">Adrianne</label>
+                  <div class="col-xs-11">
+                    <select class="form-control input-xs">
+                      <option value="0">N/A</option>
+                      <optgroup label="Sender">
+                        <option value="s1">Engler, Adrianne</option>
+                      </optgroup>
+                      <optgroup label="Receiver">
+                        <option value="r0">All</option>
+                        <option value="r1">Allen, Phillip K.</option>
+                        <option value="r2">Grigsby, Mike</option>
+                      </optgroup>
+                      <optgroup label="Mention">
+                        <option value="m1">Phillip <sub>1</sub></option>
+                        <option value="m2">Mike <sub>2</sub></option>
+                        <option value="m3">you <sub>3</sub></option>
+                        <option value="m4">ENA TRading Track <sub>4</sub></option>
+                        <option value="m5" selected>I <sub>5</sub></option>
+                        <option value="m6">your <sub>6</sub></option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -422,42 +285,44 @@
                 {{ receiver }};
               {% endfor %}
             </p>
-            <p>
-              {{ email['body'] }}
-            </p>
-            <div class="col-xs-12">
+            <div class="col-xs-12 entities">
               {% set counter = [] %}
               {% set ent_list = []%}
               {% for ent in email['ents'] %}
-                <p class="pull-left label-box select-box">
-                  {% if ent[1] == True or ent[2] == 'PERSON' or ent[2] == 'ORG' %}
-                    {% if counter.append('1') %}{% endif %}
-                    {% set l = counter|length|string %}
-                    {% set name = ent[0] + "_" + l %}
-                    {{ name }}
-                    {% if ent_list.append(name) %}{% endif %}
-                  {% else %}
-                    {{ ent[0] }}
-                  {% endif %}
-                  <select name="{{ loop.index0 }}" class="form-control input-xs">
-                    <option value="0" selected>N/A</option>
-                    {% for e in ent_list[0:-1] %}
-                      <option value="a">{{ e }}</option>
-                    {% endfor %}
+                {% if ent[1] == True or ent[2] == 'PERSON' or ent[2] == 'ORG'%}
+                  {% if counter.append('1') %}{% endif %}
+                  {% set l = counter|length|string %}
+                  {% set name = ent[0] + "&sub" + l %}
+                  {% if ent_list.append(name) %}{% endif %}
+                  <mark data-entity="org">{{ ent[0] }} <sub>{{ l }}</sub></mark>
+                {% else %}
+                  {{ ent[0] }}
+                {% endif %}
+              {% endfor %}
+              {% for ent in ent_list %}
+              <div class="form-group">
+                <label class="col-xs-1">{{ ent }}</label>
+                <div class="col-xs-11">
+                  <select class="form-control input-xs">
+                    <option value="0">N/A</option>
                     <optgroup label="Sender">
-                      <option value="1">{{ email['From'] }}</option>
+                      <option value="s1">{{ email['From'] }}</option>
                     </optgroup>
                     <optgroup label="Receiver">
+                      <option value="r0" selected>All</option>
                       {% for receiver in email['receivers'] %}
-                        <option value="2">{{ receiver }}</option>
+                        <option value="r{{loop.index}}" selected>{{ receiver }}</option>
                       {% endfor %}
                     </optgroup>
+                    <optgroup label="Mention">
+                    </optgroup>
                   </select>
-                </p>
+                </div>
+              </div>
               {% endfor %}
             </div>
           </fieldset>
-          <p><input type='submit' id='submitButton' value='Submit' class="col-xs-6 btn btn-default btn-primary" /></p>
+          <input type='submit' id='submitButton' value='Submit' class="col-xs-10 col-xs-offset-1 btn btn-default btn-primary" />
         </form>
         <script language='Javascript'>
           turkSetAssignmentID();
@@ -481,17 +346,57 @@
       line-height: 1.5; /* If Placeholder of the input is moved up, rem/modify this. */
       border-radius: 3px;
     }
-    .label-box {
-      text-align: center;
-      padding: 1px;
-      border: 1px solid #ddd;
+    .entities {
+         line-height: 2;
     }
-    .mention {
-      background-color: #5bc0de;
-      color: white;
+
+    [data-entity] {
+         padding: 0.25em 0.35em;
+         margin: 0px 0.25em;
+         line-height: 1;
+         display: inline-block;
+         border-radius: 0.25em;
+         border: 1px solid;
     }
-    .select-box {
-      color: navy;
+
+    [data-entity]::after {
+         box-sizing: border-box;
+         /*content: attr(data-entity);*/
+         font-size: 0.6em;
+         line-height: 1;
+         padding: 0.35em;
+         border-radius: 0.35em;
+         text-transform: uppercase;
+         display: inline-block;
+         vertical-align: middle;
+         margin: 0px 0px 0.1rem 0.5rem;
+    }
+
+    [data-entity][data-entity="person"] {
+         background: rgba(166, 226, 45, 0.2);
+         border-color: rgb(166, 226, 45);
+    }
+
+    [data-entity][data-entity="person"]::after {
+         background: rgb(166, 226, 45);
+    }
+
+    [data-entity][data-entity="prp"] {
+         background: rgba(224, 0, 132, 0.2);
+         border-color: rgb(224, 0, 132);
+    }
+
+    [data-entity][data-entity="prp"]::after {
+         background: rgb(224, 0, 132);
+    }
+
+    [data-entity][data-entity="org"] {
+         background: rgba(67, 198, 252, 0.2);
+         border-color: rgb(67, 198, 252);
+    }
+
+    [data-entity][data-entity="org"]::after {
+         background: rgb(67, 198, 252);
     }
   </style>
 </body>

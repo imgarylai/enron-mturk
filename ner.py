@@ -3,7 +3,7 @@ import elit
 from tqdm import tqdm
 
 data_path = 'email.threads.strict.only.json'
-outout_path = 'email.threads.strict.only.ner.json'
+outout_path = 'email.threads.strict.only.ent.json'
 
 with open(data_path) as data_file:
     data = json.load(data_file)
