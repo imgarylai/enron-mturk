@@ -3,7 +3,7 @@ from elit.reader import TSVReader
 from tqdm import tqdm
 
 data_path = 'email.threads.strict.only.json'
-outout_path = 'email.threads.strict.only.ent.json'
+outout_dir = 'ents'
 
 with open(data_path) as data_file:
     data = json.load(data_file)
@@ -42,7 +42,7 @@ def group(graphs):
 if __name__ == '__main__':
     reader = TSVReader(1, 2, 3, 4, 5, 6, 7, 8)
 
-    for thread in tqdm(data):
+    for k, thread in enumerate(tqdm(data)):
         for i, email in enumerate(thread['emails']):
             filename = "tsv/{}/{}.tsv".format(thread['path'], i)
 
@@ -52,5 +52,6 @@ if __name__ == '__main__':
                 arr.extend(group(nodes))
             email['ents'] = arr
 
+        outout_path = "{}/{}.json".format(outout_dir, k)
         with open(outout_path, 'w') as outfile:
-            json.dump(data, outfile)
+            json.dump(thread, outfile)
