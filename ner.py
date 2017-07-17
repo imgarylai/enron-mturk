@@ -53,4 +53,4 @@ if __name__ == '__main__':
             email['ents'] = arr
 
         with open(outout_path, 'w') as outfile:
-            json.dump(data, outfile, indent=2)
+            json.dump(data, outfile)
