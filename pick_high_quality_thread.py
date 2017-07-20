@@ -1,44 +1,48 @@
 import json
 import os
+import shutil
 import random
 
-data_path = 'email.threads.strict.only.ner.json'
-high_quality_thread_path = 'email.threads.strict.only.ner.hq.json'
+source = 'ents'
+hq_dist = 'ents_hq'
+lq_dist = 'ents_lq'
 
-with open(data_path) as data_file:
-    data = json.load(data_file)
 
-if __name__ == '__main__':
-    result = []
-    thread_count = 0
-    random.shuffle(data)
-    for i, thread in enumerate(data):
-        for email in thread['emails']:
-            receivers = []
-            for r in ['To', 'Cc', 'Bcc']:
-                try:
-                    res = email[r]
-                    receivers.extend(res)
-                except KeyError:
-                    continue
+def check_q(file_path):
+    with open(file_path) as data_file:
+        thread = json.load(data_file)
+    for email in thread['emails']:
+        receivers = []
+        for r in ['To', 'Cc', 'Bcc']:
             try:
-                print("Sender: {}".format(email['From']))
+                res = email[r]
+                receivers.extend(res)
             except KeyError:
                 continue
-            print("----------")
-            print("Receivers: {}".format(",".join(receivers)))
-            print("----------")
-            print("Body:")
-            print("==========")
-            print(email["body"])
-            print("==========")
-        print("Thread: {}, HQ threads: {}".format(i, thread_count))
-        q = raw_input('HQ? Y:1/N:other')
-        os.system('cls' if os.name == 'nt' else 'clear')
-        if q == '1':
-            result.append(thread)
-            thread_count += 1
-            with open(high_quality_thread_path, 'w') as outfile:
-                json.dump(result, outfile, indent = 2)
-        else:
+        try:
+            print("Sender: {}".format(email['From']))
+        except KeyError:
             continue
+        print("----------")
+        print("Receivers: {}".format(",".join(receivers)))
+        print("----------")
+        print("Body:")
+        print("==========")
+        print(email["body"])
+        print("==========")
+    q = input('HQ? Y:1 / N:other')
+    os.system('cls' if os.name == 'nt' else 'clear')
+    return q == '1'
+
+
+if __name__ == '__main__':
+
+    for dirpath, dnames, fnames in os.walk(source):
+        for f in fnames:
+            if f.endswith(".json"):
+                source_path = os.path.join(dirpath, f)
+                if check_q(os.path.join(dirpath, f)):
+                    dist_path = "{}/{}".format(hq_dist,f)
+                else:
+                    dist_path = "{}/{}".format(lq_dist, f)
+                shutil.move(source_path, dist_path)
