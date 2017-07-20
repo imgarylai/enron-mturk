@@ -1,17 +1,18 @@
 import itertools
 import yaml
-from boto.mturk.connection import MTurkConnection, MTurkRequestError
-from mturk_tmpl import MturkTmpl, ReceiversTooMuch, TokenLength
+from boto.mturk.connection import MTurkConnection
+from mturk_tmpl import MturkTmpl
+
 
 class Mturk():
     def __init__(self):
         self.config = self.set_config()
-        self.mturk = MTurkConnection(aws_access_key_id = self.config['aws_access_key_id'],
-                                     aws_secret_access_key = self.config['aws_secret_access_key'],
-                                     host = self.config['host'])
-        self.mturk_tmpl  = MturkTmpl()
+        self.mturk = MTurkConnection(aws_access_key_id=self.config['aws_access_key_id'],
+                                     aws_secret_access_key=self.config['aws_secret_access_key'],
+                                     host=self.config['host'])
+        self.mturk_tmpl = MturkTmpl()
 
-    def set_config(self, config_path = "config.yml"):
+    def set_config(self, config_path="config.yml"):
         with open(config_path, 'r') as file:
             config = yaml.load(file)
         return config
@@ -25,11 +26,11 @@ class Mturk():
 
     def get_all_assignments(self, hit_id):
         page_size = 100
-        assignments = self.mturk.get_assignments(hit_id, page_size = page_size)
+        assignments = self.mturk.get_assignments(hit_id, page_size=page_size)
         total_records = int(assignments.TotalNumResults)
         get_page_assignments = lambda page: self.mturk.get_assignments(hit_id,
-            page_size=page_size,
-            page_number=page)
+                                                                       page_size=page_size,
+                                                                       page_number=page)
         page_nums = self.mturk._get_pages(page_size, total_records)
         assignments_sets = itertools.imap(get_page_assignments, page_nums)
         return itertools.chain.from_iterable(assignments_sets)
@@ -42,9 +43,8 @@ class Mturk():
 
     def cal_reward(self, data):
         read_instruction = 3.0
-        word_count = len(data['ents']) * 1/30.0
+        word_count = len(data['ents']) * 1 / 30.0
         return round((read_instruction + word_count) / 60.0 * 6.0, 2)
-
 
     def create_hit(self, data):
         # These parameters define the HIT that will be created
@@ -55,15 +55,16 @@ class Mturk():
         # reward is what Workers will be paid when you approve their work
         # Check out the documentation on CreateHIT for more details
         response = self.mturk.create_hit(
-            question = self.mturk_tmpl.html_question(data),
-            max_assignments = 2,
-            title = self.config['title'],
-            description = self.config['description'],
-            keywords = self.config['keywords'],
-            duration = 120,
-            reward = self.cal_reward(data)
+            question=self.mturk_tmpl.html_question(data),
+            max_assignments=2,
+            title=self.config['title'],
+            description=self.config['description'],
+            keywords=self.config['keywords'],
+            duration=120,
+            reward=self.cal_reward(data)
         )
         return response
+
 
 if __name__ == '__main__':
     m = Mturk()

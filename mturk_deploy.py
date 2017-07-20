@@ -2,8 +2,7 @@ from mturk import Mturk
 import ujson as json
 import pandas as pd
 
-source = 'tsv/'
-enron_json = 'email.threads.strict.only.ner.json'
+enron_json = 'email.threads.strict.only.ents.json'
 
 with open(enron_json) as data_file:
     data = json.load(data_file)
