@@ -1,10 +1,10 @@
 import os
 import jinja2
 from boto.mturk.question import HTMLQuestion
-# import sys
-#
-# reload(sys)
-# sys.setdefaultencoding('utf-8')
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 
 class Error(Exception):
