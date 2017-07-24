@@ -3,9 +3,9 @@ import jinja2
 from boto.mturk.question import HTMLQuestion
 import sys
 
-reload(sys)
-sys.setdefaultencoding('utf-8')
-
+if sys.version[0] == '2':
+    reload(sys)
+    sys.setdefaultencoding("utf-8")
 
 class Error(Exception):
     """Base class for exceptions in this module."""

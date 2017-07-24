@@ -1,4 +1,4 @@
-<html>
+<html lang="en-US">
   <head>
     <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
     <script src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js' type='text/javascript'></script>
@@ -7,7 +7,7 @@
     <!-- Bootstrap v3.0.3 -->
     <link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.rawgit.com/imgarylai/enron-mturk/e1e6e312/tmpl.css">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <div class="col-xs-12">
           <!-- Instructions -->
@@ -18,27 +18,24 @@
             <div class="panel-body">
               <div class="col-xs-12">
                 <p>
-                  Find and label the sender and receiver of the email.
+                  In this hit, we need you label the relationship of each mention in a email. Rules are in the next section, and two examples are in the following section.
                 </p>
                 <ul>
-                  <li>Label both first name and last name as sender or receiver(s).</li>
+                  <li>When a mention appears in the email first time, please mark it as which sender or receiver.</li>
+                  <li>Next time you see a mention which appeared before, please mark its relationship to the last mention. </li>
                   <li>Label pronoun (I, me, he, she, herself, you, it, that, they, each, few, many, who, whoever, whose, someone, everybody, etc.) and common nouns(guys, man, mom, sister, bother, etc.) as much as you can.</li>
                 </ul>
               </div>
               <div class="col-xs-12">
-                Here are some examples of labeling sender and receiver:
-              </div>
-              <div class="col-xs-12">
                 <h4>Example 1</h4>
-                <p><strong>sender:</strong> phillip.allen@enron.com</p>
-                <p><strong>receiver:(multiple receivers are separated by semicolon ; )</strong>
+                <p><strong>Sender:</strong> phillip.allen@enron.com</p>
+                <p><strong>Receiver (multiple receivers are separated by semicolon ";" ):</strong>
                   ina.rangel@enron.com</p>
-                <p><strong>content:</strong> Ina, Can you please forward the presentation to Mog . Phillip</p>
-                <p><mark data-entity="org">Ina <sub>1</sub></mark>, Can <mark data-entity="org">you <sub>2</sub></mark> please forward the presentation to <mark data-entity="org">Mog <sub>3</sub></mark>. <mark data-entity="org">Phillip <sub>4</sub></mark></p>
+                <p><strong>content:</strong><mark data-entity="org">Ina <sub>1</sub></mark>, Can <mark data-entity="org">you <sub>2</sub></mark> please forward the presentation to <mark data-entity="org">Mog <sub>3</sub></mark>. <mark data-entity="org">Phillip <sub>4</sub></mark></p>
                 <form class="form-horizontal">
                   <div class="form-group">
-                    <label class="col-xs-1">Ina</label>
-                    <div class="col-xs-11">
+                    <label class="col-xs-2">Ina</label>
+                    <div class="col-xs-10">
                       <select class="form-control input-xs">
                         <option value="0">N/A</option>
                         <optgroup label="Sender">
@@ -53,8 +50,8 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-xs-1">you</label>
-                    <div class="col-xs-11">
+                    <label class="col-xs-2">you</label>
+                    <div class="col-xs-10">
                       <select class="form-control input-xs">
                         <option value="0">N/A</option>
                         <optgroup label="Sender">
@@ -70,8 +67,8 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-xs-1">Mog</label>
-                    <div class="col-xs-11">
+                    <label class="col-xs-2">Mog</label>
+                    <div class="col-xs-10">
                       <select class="form-control input-xs">
                         <option value="0">N/A</option>
                         <optgroup label="Sender">
@@ -88,8 +85,8 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-xs-1">Phillip</label>
-                    <div class="col-xs-11">
+                    <label class="col-xs-2">Phillip</label>
+                    <div class="col-xs-10">
                       <select class="form-control input-xs">
                         <option value="0">N/A</option>
                         <optgroup label="Sender">
@@ -111,22 +108,21 @@
               <hr>
               <div class="col-xs-12">
                 <h4>Example 2</h4>
-                <p><strong>sender:</strong> Engler, Adrianne</p>
-                <p><strong>receiver:(multiple receivers are separated by semicolon ; )</strong>
+                <p><strong>Sender:</strong> Engler, Adrianne</p>
+                <p><strong>Receiver (multiple receivers are separated by semicolon ";" ):</strong>
                   Allen, Phillip K.; Grigsby, Mike</p>
-                <p><strong>content:</strong> Hi Phillip and Mike ! Is there any way you could contact the below candidate for the ENA TRading Track ? I appreciate your extra effort ! Kind regards , Adrianne x57302</p>
-                <p>Hi <mark data-entity="org">Phillip <sub>1</sub></mark> and <mark data-entity="org">Mike <sub>2</sub></mark> ! Is there any way <mark data-entity="org">you <sub>3</sub></mark> could contact the below candidate for the <mark data-entity="org">ENA TRading Track <sub>4</sub></mark> ? <mark data-entity="org">I <sub>5</sub></mark> appreciate <mark data-entity="org">your <sub>6</sub></mark> extra effort ! Kind regards , <mark data-entity="org">Adrianne <sub>7</sub></mark> x57302</p>
+                <p><strong>content:</strong> Hi <mark data-entity="org">Phillip <sub>1</sub></mark> and <mark data-entity="org">Mike <sub>2</sub></mark> ! Is there any way <mark data-entity="org">you <sub>3</sub></mark> could contact the below candidate for the <mark data-entity="org">ENA TRading Track <sub>4</sub></mark> ? <mark data-entity="org">I <sub>5</sub></mark> appreciate <mark data-entity="org">your <sub>6</sub></mark> extra effort ! Kind regards , <mark data-entity="org">Adrianne <sub>7</sub></mark> x57302</p>
                 <form class="form-horizontal">
                   <div class="form-group">
-                    <label class="col-xs-1">Phillip</label>
-                    <div class="col-xs-11">
+                    <label class="col-xs-2">Phillip</label>
+                    <div class="col-xs-10">
                       <select class="form-control input-xs">
                         <option value="0">N/A</option>
                         <optgroup label="Sender">
                           <option value="s1">Engler, Adrianne</option>
                         </optgroup>
                         <optgroup label="Receiver">
-                          <option value="r0">All</option>
+                          <option value="r0">All receivers</option>
                           <option value="r1" selected>Allen, Phillip K.</option>
                           <option value="r2">Grigsby, Mike</option>
                         </optgroup>
@@ -136,15 +132,15 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-xs-1">Mike</label>
-                    <div class="col-xs-11">
+                    <label class="col-xs-2">Mike</label>
+                    <div class="col-xs-10">
                       <select class="form-control input-xs">
                         <option value="0">N/A</option>
                         <optgroup label="Sender">
                           <option value="s1">Engler, Adrianne</option>
                         </optgroup>
                         <optgroup label="Receiver">
-                          <option value="r0">All</option>
+                          <option value="r0">All receivers</option>
                           <option value="r1">Allen, Phillip K.</option>
                           <option value="r2" selected>Grigsby, Mike</option>
                         </optgroup>
@@ -155,15 +151,15 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-xs-1">you</label>
-                    <div class="col-xs-11">
+                    <label class="col-xs-2">you</label>
+                    <div class="col-xs-10">
                       <select class="form-control input-xs">
                         <option value="0">N/A</option>
                         <optgroup label="Sender">
                           <option value="s1">Engler, Adrianne</option>
                         </optgroup>
                         <optgroup label="Receiver">
-                          <option value="r0" selected>All</option>
+                          <option value="r0" selected>All receivers</option>
                           <option value="r1">Allen, Phillip K.</option>
                           <option value="r2">Grigsby, Mike</option>
                         </optgroup>
@@ -175,15 +171,15 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-xs-1">ENA TRading Track</label>
-                    <div class="col-xs-11">
+                    <label class="col-xs-2">ENA TRading Track</label>
+                    <div class="col-xs-10">
                       <select class="form-control input-xs">
                         <option value="0" selected>N/A</option>
                         <optgroup label="Sender">
                           <option value="s1">Engler, Adrianne</option>
                         </optgroup>
                         <optgroup label="Receiver">
-                          <option value="r0">All</option>
+                          <option value="r0">All receivers</option>
                           <option value="r1">Allen, Phillip K.</option>
                           <option value="r2">Grigsby, Mike</option>
                         </optgroup>
@@ -196,15 +192,15 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-xs-1">I</label>
-                    <div class="col-xs-11">
+                    <label class="col-xs-2">I</label>
+                    <div class="col-xs-10">
                       <select class="form-control input-xs">
                         <option value="0" selected>N/A</option>
                         <optgroup label="Sender">
                           <option value="s1" selected>Engler, Adrianne</option>
                         </optgroup>
                         <optgroup label="Receiver">
-                          <option value="r0">All</option>
+                          <option value="r0">All receivers</option>
                           <option value="r1">Allen, Phillip K.</option>
                           <option value="r2">Grigsby, Mike</option>
                         </optgroup>
@@ -218,15 +214,15 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-xs-1">your</label>
-                    <div class="col-xs-11">
+                    <label class="col-xs-2">your</label>
+                    <div class="col-xs-10">
                       <select class="form-control input-xs">
                         <option value="0">N/A</option>
                         <optgroup label="Sender">
                           <option value="s1">Engler, Adrianne</option>
                         </optgroup>
                         <optgroup label="Receiver">
-                          <option value="r0" selected>All</option>
+                          <option value="r0" selected>All receivers</option>
                           <option value="r1">Allen, Phillip K.</option>
                           <option value="r2">Grigsby, Mike</option>
                         </optgroup>
@@ -235,21 +231,21 @@
                             <option value="m2">Mike 2</option>
                             <option value="m3">you 3</option>
                             <option value="m4">ENA TRading Track 4</option>
-                            <option value="m5" selected>I 5</option>
+                            <option value="m5">I 5</option>
                         </optgroup>
                       </select>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label class="col-xs-1">Adrianne</label>
-                    <div class="col-xs-11">
+                    <label class="col-xs-2">Adrianne</label>
+                    <div class="col-xs-10">
                       <select class="form-control input-xs">
                         <option value="0">N/A</option>
                         <optgroup label="Sender">
                           <option value="s1">Engler, Adrianne</option>
                         </optgroup>
                         <optgroup label="Receiver">
-                          <option value="r0">All</option>
+                          <option value="r0">All receivers</option>
                           <option value="r1">Allen, Phillip K.</option>
                           <option value="r2">Grigsby, Mike</option>
                         </optgroup>
@@ -272,14 +268,14 @@
       </div>
     </div>
     <!-- End Instructions -->
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
         <div class="col-xs-12">
           <form name='mturk_form' method='post' id='mturk_form' action='https://workersandbox.mturk.com/mturk/externalSubmit'>
             <input type='hidden' value='' name='assignmentId' id='assignmentId' />
             <label>Please label each mention in this email:</label>
             <p><strong>sender:</strong> {{ email['From'] }}</p>
-            <p><strong>receivers:(multiple receivers are separated by semicolon ; )</strong>
+            <p><strong>receivers (multiple receivers are separated by semicolon ";"):</strong>
               {% for receiver in email['receivers'] %}
                 {{ receiver }};
               {% endfor %}
@@ -295,7 +291,7 @@
                   {% if ent_list.append(name) %}{% endif %}
                   <mark data-entity="org">{{ ent[0] }} <sub>{{ l }}</sub></mark>
                 {% else %}
-                  {{ ent[0] }}
+                  {{ ent[0]|e }}
                 {% endif %}
               {% endfor %}
             </div>
@@ -313,7 +309,7 @@
                       <option value="s1">{{ email['From'] }}</option>
                     </optgroup>
                     <optgroup label="Receiver">
-                      <option value="r0">All</option>
+                      <option value="r0">All receivers</option>
                       {% for receiver in email['receivers'] %}
                         <option value="r{{loop.index}}"> {{ receiver }} </option>
                       {% endfor %}

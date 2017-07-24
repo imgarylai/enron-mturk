@@ -31,7 +31,7 @@ class Mturk():
         get_page_assignments = lambda page: self.mturk.get_assignments(hit_id,
                                                                        page_size=page_size,
                                                                        page_number=page)
-        page_nums = self.mturk._get_pages(page_size, total_records)
+        page_nums = self.mturk._get_pages(page_size=page_size, total_records=total_records)
         assignments_sets = itertools.imap(get_page_assignments, page_nums)
         return itertools.chain.from_iterable(assignments_sets)
 
@@ -56,7 +56,7 @@ class Mturk():
         # Check out the documentation on CreateHIT for more details
         response = self.mturk.create_hit(
             question=self.mturk_tmpl.html_question(data),
-            max_assignments=2,
+            max_assignments=1,
             title=self.config['title'],
             description=self.config['description'],
             keywords=self.config['keywords'],
